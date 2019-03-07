@@ -2,7 +2,7 @@
 	"name" : "lsys/captcha",
 	"type" : "library",
 	"license": "Apache-2.0",
-	"version" : "1.0.0",
+	"version" : "2.0.0",
 	"description" : "lsys module captcha",
 	"autoload" : {
 		"psr-4" : {
@@ -11,17 +11,17 @@
 	},
 	"require" : {
 		"php" : ">=5.5",
-		"lsys/session" : "~1.0.0"
+		"lsys/session" : "~2.0.0"
 	},
 	"require-dev" : {
-		"lsys/captcha-image" : "~1.0.0"
+		"lsys/captcha-image" : "~2.0.0"
 	},
 	"suggest": {
 		"gee-team/gt-php-sdk" : "dev-master",
-		"lsys/captcha-geetest":"~1.0.0",
-     	"lsys/captcha-image":"~1.0.0",
-     	"lsys/captcha-stroage-memcache":"~1.0.0",
-     	"lsys/captcha-stroage-memcached":"~1.0.0",
-     	"lsys/captcha-stroage-redis":"~1.0.0"
+		"lsys/captcha-geetest":"~2.0.0",
+     	"lsys/captcha-image":"~2.0.0",
+     	"lsys/captcha-stroage-memcache":"~2.0.0",
+     	"lsys/captcha-stroage-memcached":"~2.0.0",
+     	"lsys/captcha-stroage-redis":"~2.0.0"
     }
 }

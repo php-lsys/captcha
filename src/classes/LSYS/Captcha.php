@@ -13,7 +13,7 @@ abstract class Captcha{
 	/**
 	 * 获取调用验证时需要的数据
 	 */
-	abstract public function get_result();
+	abstract public function getResult();
 	/**
 	 * 校验验证码是否正确
 	 * @param string $code

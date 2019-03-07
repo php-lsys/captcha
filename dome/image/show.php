@@ -3,7 +3,7 @@
 use LSYS\Captcha\Image;
 require_once  __DIR__."/../Bootstarp.php";
 $t = new Image();
-$res=$t->get_result();
+$res=$t->getResult();
 
 ?>
 <script src="http://code.jquery.com/jquery-1.12.3.min.js"></script>
