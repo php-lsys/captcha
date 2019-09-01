@@ -21,7 +21,6 @@
 		"lsys/session" : "~2.1.0"
 	},
 	"require-dev" : {
-		"lsys/captcha-image" : "~2.1.0",
 		"gee-team/gt-php-sdk" : "dev-master",
 		"gregwar/captcha" : "^v1.1.1"
 	},
