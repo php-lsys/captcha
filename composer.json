@@ -16,7 +16,7 @@
 		}
 	},
 	"require" : {
-		"lsys/session" : "~2.1.0"
+		"lsys/session" : "dev-master"
 	},
 	"require-dev" : {
 		"gee-team/gt-php-sdk" : "dev-master",
