@@ -25,8 +25,8 @@
 	"suggest": {
 		"gee-team/gt-php-sdk" : "dev-master",
 		"gregwar/captcha" : "^v1.1.1",
-     	"lsys/memcache":"~2.0.0",
-     	"lsys/memcached":"~2.0.0",
-     	"lsys/redis":"~2.0.0"
+     	"lsys/memcache":"~0.0.0",
+     	"lsys/memcached":"~0.0.0",
+     	"lsys/redis":"~0.0.0"
     }
 }
