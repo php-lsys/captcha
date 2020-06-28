@@ -9,7 +9,7 @@ class Redis implements Storage{
 	public static $prefix="captcha:";
 	protected $_redis;
 	protected $_uid;
-	public function __construct($uid,\LSYS\Redis $redis=null){
+	public function __construct(?string $uid,\LSYS\Redis $redis=null){
 		$this->_uid=$uid;
 		$this->_redis=$redis?$redis:\LSYS\Redis\DI::get()->redis();
 	}
@@ -20,12 +20,12 @@ class Redis implements Storage{
 	    $this->_redis->configConnect();
 		return $this->_redis->get($this->_key());
 	}
-	public function set($value){
+	public function set(string $value):bool{
 	    $this->_redis->configConnect();
-		return $this->_redis->setex($this->_key(),3600,$value);
+	    return (bool)$this->_redis->setex($this->_key(),3600,$value);
 	}
-	public function clear(){
+	public function clear():bool{
 	    $this->_redis->configConnect();
-		return $this->_redis->del($this->_key());
+	    return (bool)$this->_redis->del($this->_key());
 	}
 }

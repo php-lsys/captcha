@@ -9,7 +9,7 @@ class Image extends Captcha{
 	/**
 	 * 验证码基类
 	 */
-	public function __construct($uid=null,Storage $storage=null){
+	public function __construct(?string $uid=null,Storage $storage=null){
 		parent::__construct($uid);
 		$this->_storage=$storage==null?new Session($this->_uid):$storage;
 	}
@@ -17,7 +17,7 @@ class Image extends Captcha{
 	 * {@inheritDoc}
 	 * @see \LSYS\Captcha::valid()
 	 */
-	public function valid($data){
+	public function valid(?string $data):bool{
 		if (!$this->test($data)) return false;
 		$this->_storage->clear();
 		return true;
@@ -37,7 +37,7 @@ class Image extends Captcha{
 	 * @param string $data
 	 * @return boolean
 	 */
-	public function test($data){
+	public function test($data):bool{
 		$code=$this->_storage->get();
 		if (empty($code))return false;
 		return strtolower($code)==strtolower($data);

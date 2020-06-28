@@ -9,7 +9,7 @@ class Geetest extends Captcha{
 	protected $_config;
 	protected $_type;
 	protected $_storage;
-	public function __construct(Config $config,$uid=null,Storage $storage=null,$type=self::TYPE_PC){
+	public function __construct(Config $config,?string $uid=null,Storage $storage=null,int $type=self::TYPE_PC){
 		parent::__construct($uid);
 		$this->_storage=$storage==null?new Session($this->_uid):$storage;
 		$this->_config=$config;
@@ -20,7 +20,7 @@ class Geetest extends Captcha{
 	 * {@inheritDoc}
 	 * @see \LSYS\Captcha::valid()
 	 */
-	public function valid($data){
+	public function valid(?string $data):bool{
 		$GtSdk = new \GeetestLib($this->_config->get($this->_type.".captcha_id"), $this->_config->get($this->_type.".private_key"));
 		$data=explode(",",$data);
 		if (count($data)!=3) return false;

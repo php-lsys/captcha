@@ -8,7 +8,7 @@ interface Storage{
 	 * 本地验证码存储
 	 * @param string $uid
 	 */
-	public function __construct($uid);
+    public function __construct(?string $uid);
 	/**
 	 * 通过TOKEN名获取TOKEN值
 	 */
@@ -17,9 +17,9 @@ interface Storage{
 	 * 设置TOKEN值
 	 * @param string $value
 	 */
-	public function set($value);
+	public function set(string $value):bool;
 	/**
 	 * 清除指定TOKEN值
 	 */
-	public function clear();
+	public function clear():bool;
 }

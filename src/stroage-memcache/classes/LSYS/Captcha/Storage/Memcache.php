@@ -9,7 +9,7 @@ class Memcache implements Storage{
 	public static $prefix="captcha:";
 	protected $_mem;
 	protected $_uid;
-	public function __construct($uid,\LSYS\Memcache $memcache=null){
+	public function __construct(?string $uid,\LSYS\Memcache $memcache=null){
 		$this->_uid=$uid;
 		$this->_mem=$memcache?$memcache:\LSYS\Memcache\DI::get()->memcache();
 	}
@@ -19,10 +19,10 @@ class Memcache implements Storage{
 	public function get(){
 		return $this->_mem->configServers()->get($this->_key());
 	}
-	public function set($value){
-	    return $this->_mem->configServers()->set($this->_key(),$value,false,3600);
+	public function set(string $value):bool{
+	    return (bool)$this->_mem->configServers()->set($this->_key(),$value,false,3600);
 	}
-	public function clear(){
-	    return $this->_mem->configServers()->delete($this->_key());
+	public function clear():bool{
+	    return (bool)$this->_mem->configServers()->delete($this->_key());
 	}
 }
