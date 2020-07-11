@@ -9,7 +9,7 @@ class Geetest extends Captcha{
 	protected $_config;
 	protected $_type;
 	protected $_storage;
-	public function __construct(Config $config,?string $uid=null,Storage $storage=null,int $type=self::TYPE_PC){
+	public function __construct(Config $config,?string $uid=null,Storage $storage=null,string $type=self::TYPE_PC){
 		parent::__construct($uid);
 		$this->_storage=$storage==null?new Session($this->_uid):$storage;
 		$this->_config=$config;
